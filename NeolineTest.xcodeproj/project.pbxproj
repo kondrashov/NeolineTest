@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5298700C181A887D005C1670 /* navBarButtonBackg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5298700B181A887D005C1670 /* navBarButtonBackg.png */; };
+		52987012181A88D3005C1670 /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298700F181A88D3005C1670 /* UIImage+Helpers.m */; };
+		52987013181A88D3005C1670 /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 52987011181A88D3005C1670 /* UIView+Helpers.m */; };
 		52C2F113181A65E600466E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F112181A65E600466E6E /* UIKit.framework */; };
 		52C2F115181A65E600466E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F114181A65E600466E6E /* Foundation.framework */; };
 		52C2F117181A65E600466E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F116181A65E600466E6E /* CoreGraphics.framework */; };
@@ -23,9 +26,15 @@
 		52C2F140181A680B00466E6E /* ContactsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F13F181A680B00466E6E /* ContactsListController.m */; };
 		52C2F143181A683100466E6E /* ContactDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F142181A683100466E6E /* ContactDetailController.m */; };
 		52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C2F146181A6B9000466E6E /* navBarBackgImg.png */; };
+		52C2F14C181A848200466E6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F14B181A848200466E6E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5298700B181A887D005C1670 /* navBarButtonBackg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarButtonBackg.png; sourceTree = "<group>"; };
+		5298700E181A88D3005C1670 /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helpers.h"; sourceTree = "<group>"; };
+		5298700F181A88D3005C1670 /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helpers.m"; sourceTree = "<group>"; };
+		52987010181A88D3005C1670 /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helpers.h"; sourceTree = "<group>"; };
+		52987011181A88D3005C1670 /* UIView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helpers.m"; sourceTree = "<group>"; };
 		52C2F10F181A65E600466E6E /* NeolineTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeolineTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C2F112181A65E600466E6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		52C2F114181A65E600466E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +59,8 @@
 		52C2F141181A683100466E6E /* ContactDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailController.h; sourceTree = "<group>"; };
 		52C2F142181A683100466E6E /* ContactDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailController.m; sourceTree = "<group>"; };
 		52C2F146181A6B9000466E6E /* navBarBackgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBackgImg.png; sourceTree = "<group>"; };
+		52C2F14A181A840B00466E6E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		52C2F14B181A848200466E6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C2F14C181A848200466E6E /* QuartzCore.framework in Frameworks */,
 				52C2F113181A65E600466E6E /* UIKit.framework in Frameworks */,
 				52C2F115181A65E600466E6E /* Foundation.framework in Frameworks */,
 				52C2F117181A65E600466E6E /* CoreGraphics.framework in Frameworks */,
@@ -67,9 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5298700D181A88D3005C1670 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5298700E181A88D3005C1670 /* UIImage+Helpers.h */,
+				5298700F181A88D3005C1670 /* UIImage+Helpers.m */,
+				52987010181A88D3005C1670 /* UIView+Helpers.h */,
+				52987011181A88D3005C1670 /* UIView+Helpers.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		52C2F106181A65E600466E6E = {
 			isa = PBXGroup;
 			children = (
+				52C2F149181A83EF00466E6E /* Global */,
 				52C2F144181A6B6800466E6E /* Resources */,
 				52C2F11A181A65E600466E6E /* NeolineTest */,
 				52C2F111181A65E600466E6E /* Frameworks */,
@@ -88,6 +112,7 @@
 		52C2F111181A65E600466E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52C2F14B181A848200466E6E /* QuartzCore.framework */,
 				52C2F112181A65E600466E6E /* UIKit.framework */,
 				52C2F114181A65E600466E6E /* Foundation.framework */,
 				52C2F116181A65E600466E6E /* CoreGraphics.framework */,
@@ -174,8 +199,19 @@
 			isa = PBXGroup;
 			children = (
 				52C2F146181A6B9000466E6E /* navBarBackgImg.png */,
+				5298700B181A887D005C1670 /* navBarButtonBackg.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		52C2F149181A83EF00466E6E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				52C2F14A181A840B00466E6E /* Constants.h */,
+				5298700D181A88D3005C1670 /* Categories */,
+			);
+			name = Global;
+			path = NeolineTest/Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +270,7 @@
 				52C2F129181A65E600466E6E /* Default@2x.png in Resources */,
 				52C2F12B181A65E600466E6E /* Default-568h@2x.png in Resources */,
 				52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */,
+				5298700C181A887D005C1670 /* navBarButtonBackg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +288,8 @@
 				52C2F13D181A67F100466E6E /* BaseTableController.m in Sources */,
 				52C2F140181A680B00466E6E /* ContactsListController.m in Sources */,
 				52C2F143181A683100466E6E /* ContactDetailController.m in Sources */,
+				52987012181A88D3005C1670 /* UIImage+Helpers.m in Sources */,
+				52987013181A88D3005C1670 /* UIView+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +318,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -294,6 +334,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,7 +352,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -318,6 +361,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -327,10 +372,14 @@
 		52C2F132181A65E600466E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NeolineTest/NeolineTest-Prefix.pch";
 				INFOPLIST_FILE = "NeolineTest/NeolineTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -338,10 +387,14 @@
 		52C2F133181A65E600466E6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NeolineTest/NeolineTest-Prefix.pch";
 				INFOPLIST_FILE = "NeolineTest/NeolineTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

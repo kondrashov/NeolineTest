@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BaseNavigationController ()
 
@@ -23,19 +24,35 @@
     return self;
 }
 
-- (void)setupView
+- (void)configureNavBar
 {
     self.navigationController.navigationBar.clipsToBounds = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarBackgImg"]
                                                   forBarMetrics:UIBarMetricsDefault];
-
-
+    
+    self.navigationItem.titleView = [self getTitleView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupView];
+    [self configureNavBar];
+}
+
+- (UIView *)getTitleView
+{
+    UILabel *label = [UILabel new];
+    label.text = self.title;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont systemFontOfSize:22];
+    [label sizeToFit];
+    return [label autorelease];
+}
+
+- (UIBarButtonItem *)createBarButtonWithTitle:(NSString *)title delegate:(id)delegate selector:(SEL)selector
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];    
 }
 
 @end
