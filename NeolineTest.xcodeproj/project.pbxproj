@@ -22,6 +22,7 @@
 		52C2F13D181A67F100466E6E /* BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F13C181A67F100466E6E /* BaseTableController.m */; };
 		52C2F140181A680B00466E6E /* ContactsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F13F181A680B00466E6E /* ContactsListController.m */; };
 		52C2F143181A683100466E6E /* ContactDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F142181A683100466E6E /* ContactDetailController.m */; };
+		52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C2F146181A6B9000466E6E /* navBarBackgImg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		52C2F13F181A680B00466E6E /* ContactsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListController.m; sourceTree = "<group>"; };
 		52C2F141181A683100466E6E /* ContactDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailController.h; sourceTree = "<group>"; };
 		52C2F142181A683100466E6E /* ContactDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailController.m; sourceTree = "<group>"; };
+		52C2F146181A6B9000466E6E /* navBarBackgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBackgImg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		52C2F106181A65E600466E6E = {
 			isa = PBXGroup;
 			children = (
+				52C2F144181A6B6800466E6E /* Resources */,
 				52C2F11A181A65E600466E6E /* NeolineTest */,
 				52C2F111181A65E600466E6E /* Frameworks */,
 				52C2F110181A65E600466E6E /* Products */,
@@ -96,9 +99,9 @@
 		52C2F11A181A65E600466E6E /* NeolineTest */ = {
 			isa = PBXGroup;
 			children = (
-				52C2F134181A665900466E6E /* ViewControllers */,
 				52C2F123181A65E600466E6E /* AppDelegate.h */,
 				52C2F124181A65E600466E6E /* AppDelegate.m */,
+				52C2F134181A665900466E6E /* ViewControllers */,
 				52C2F12C181A65E600466E6E /* NeolineTest.xcdatamodeld */,
 				52C2F11B181A65E600466E6E /* Supporting Files */,
 			);
@@ -158,6 +161,23 @@
 			path = ContactsListController;
 			sourceTree = "<group>";
 		};
+		52C2F144181A6B6800466E6E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52C2F145181A6B6800466E6E /* Images */,
+			);
+			name = Resources;
+			path = NeolineTest/Resources;
+			sourceTree = "<group>";
+		};
+		52C2F145181A6B6800466E6E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				52C2F146181A6B9000466E6E /* navBarBackgImg.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +233,7 @@
 				52C2F127181A65E600466E6E /* Default.png in Resources */,
 				52C2F129181A65E600466E6E /* Default@2x.png in Resources */,
 				52C2F12B181A65E600466E6E /* Default-568h@2x.png in Resources */,
+				52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

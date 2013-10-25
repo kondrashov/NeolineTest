@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactsListController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_navController release];
     [super dealloc];
 }
 
@@ -26,8 +28,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+    
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    ContactsListController *contactListVC = [[ContactsListController alloc] init];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:contactListVC];
+    [self.navController release];
+    [contactListVC release];
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
 }
