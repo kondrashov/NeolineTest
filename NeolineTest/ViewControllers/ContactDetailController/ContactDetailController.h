@@ -7,7 +7,18 @@
 //
 
 #import "BaseNavigationController.h"
+#import "ContactInfo.h"
+
+typedef enum
+{
+    DetailMode_Add,
+    DetailMode_Edit
+}DetailMode;
 
 @interface ContactDetailController : BaseNavigationController
+
+@property (assign, nonatomic) DetailMode detailMode;
+
+- (id)initWithContactInfo:(ContactInfo *)contactInfo;
 
 @end

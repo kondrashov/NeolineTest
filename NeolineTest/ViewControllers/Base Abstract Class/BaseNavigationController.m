@@ -18,20 +18,16 @@
 
 @implementation BaseNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-
-    }
-    return self;
-}
+#pragma mark - Lifecylce
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = RGBCOLOR(206, 231, 244);
     [self configureNavBar];
 }
+
+#pragma mark - Methods
 
 - (void)configureNavBar
 {
@@ -97,6 +93,23 @@
 - (void)onLeftBarButton:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Rotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
 }
 
 @end

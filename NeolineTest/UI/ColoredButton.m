@@ -19,4 +19,12 @@
     else
         self.backgroundColor = self.normalColor;
 }
+
+- (void)dealloc
+{
+    [_normalColor release];
+    [_highlightColor release];
+    [super dealloc];
+}
+
 @end

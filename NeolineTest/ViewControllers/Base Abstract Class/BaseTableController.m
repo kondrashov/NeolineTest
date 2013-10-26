@@ -14,16 +14,29 @@
 
 @implementation BaseTableController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(!self.tableView)
+    {
+        self.tableView = [[UITableView new] autorelease];
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+    }
+}
 
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    [self setTableView:nil];
 }
 
 - (void)dealloc
 {
-    [self.tableView release];
-    [self.dataArray release];
+    [_tableView release];
+    [_dataArray release];
     [super dealloc];
 }
 
@@ -50,6 +63,20 @@
     return [UIView new];
 }
 
+- (UITableViewCell *)createCellWithNib:(NSString *)nibName
+                          forTableView:(UITableView *)table
+                            withCellId:(NSString *)cellId
+{
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:cellId];
+    
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    return cell;
+}
+
 #pragma mark - Overrride in child class
 
 - (void)configureTable
@@ -61,6 +88,5 @@
 {
     return nil;
 }
-
 
 @end

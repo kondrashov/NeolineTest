@@ -12,7 +12,4 @@
 
 - (UIImage*)safeResizableImageWithCapInsets:(UIEdgeInsets)edgeInsets
                                resizingMode:(UIImageResizingMode)resizingMode;
-
-- (UIImage *)scaledImageForSize:(CGSize)maxSize;
-
 @end

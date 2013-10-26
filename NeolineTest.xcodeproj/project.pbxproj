@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5298700C181A887D005C1670 /* navBarButtonBackg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5298700B181A887D005C1670 /* navBarButtonBackg.png */; };
 		52987012181A88D3005C1670 /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298700F181A88D3005C1670 /* UIImage+Helpers.m */; };
 		52987013181A88D3005C1670 /* UIView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 52987011181A88D3005C1670 /* UIView+Helpers.m */; };
 		52C2F113181A65E600466E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F112181A65E600466E6E /* UIKit.framework */; };
@@ -28,10 +27,20 @@
 		52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C2F146181A6B9000466E6E /* navBarBackgImg.png */; };
 		52C2F14C181A848200466E6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F14B181A848200466E6E /* QuartzCore.framework */; };
 		D3B1C035181BFBD900066E81 /* ColoredButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C034181BFBD900066E81 /* ColoredButton.m */; };
+		D3B1C039181C4AC600066E81 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C038181C4AC600066E81 /* ContactInfo.m */; };
+		D3B1C03D181C55C000066E81 /* ContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C03C181C55C000066E81 /* ContactListCell.m */; };
+		D3B1C03F181C55D900066E81 /* ContactListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C03E181C55D900066E81 /* ContactListCell.xib */; };
+		D3B1C048181C5B3F00066E81 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C040181C5B3F00066E81 /* icon1.png */; };
+		D3B1C049181C5B3F00066E81 /* icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C041181C5B3F00066E81 /* icon1@2x.png */; };
+		D3B1C04A181C5B3F00066E81 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C042181C5B3F00066E81 /* icon2.png */; };
+		D3B1C04B181C5B3F00066E81 /* icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C043181C5B3F00066E81 /* icon2@2x.png */; };
+		D3B1C04C181C5B3F00066E81 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C044181C5B3F00066E81 /* icon3.png */; };
+		D3B1C04D181C5B3F00066E81 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C045181C5B3F00066E81 /* icon3@2x.png */; };
+		D3B1C04E181C5B3F00066E81 /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C046181C5B3F00066E81 /* icon4.png */; };
+		D3B1C04F181C5B3F00066E81 /* icon4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B1C047181C5B3F00066E81 /* icon4@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5298700B181A887D005C1670 /* navBarButtonBackg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarButtonBackg.png; sourceTree = "<group>"; };
 		5298700E181A88D3005C1670 /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helpers.h"; sourceTree = "<group>"; };
 		5298700F181A88D3005C1670 /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helpers.m"; sourceTree = "<group>"; };
 		52987010181A88D3005C1670 /* UIView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helpers.h"; sourceTree = "<group>"; };
@@ -64,6 +73,19 @@
 		52C2F14B181A848200466E6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3B1C033181BFBD900066E81 /* ColoredButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredButton.h; sourceTree = "<group>"; };
 		D3B1C034181BFBD900066E81 /* ColoredButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredButton.m; sourceTree = "<group>"; };
+		D3B1C037181C4AC600066E81 /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfo.h; sourceTree = "<group>"; };
+		D3B1C038181C4AC600066E81 /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfo.m; sourceTree = "<group>"; };
+		D3B1C03B181C55C000066E81 /* ContactListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListCell.h; sourceTree = "<group>"; };
+		D3B1C03C181C55C000066E81 /* ContactListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListCell.m; sourceTree = "<group>"; };
+		D3B1C03E181C55D900066E81 /* ContactListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactListCell.xib; sourceTree = "<group>"; };
+		D3B1C040181C5B3F00066E81 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		D3B1C041181C5B3F00066E81 /* icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@2x.png"; sourceTree = "<group>"; };
+		D3B1C042181C5B3F00066E81 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		D3B1C043181C5B3F00066E81 /* icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@2x.png"; sourceTree = "<group>"; };
+		D3B1C044181C5B3F00066E81 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		D3B1C045181C5B3F00066E81 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
+		D3B1C046181C5B3F00066E81 /* icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon4.png; sourceTree = "<group>"; };
+		D3B1C047181C5B3F00066E81 /* icon4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon4@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +147,7 @@
 		52C2F11A181A65E600466E6E /* NeolineTest */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1C036181C4A9900066E81 /* Data */,
 				D3B1C032181BFBBD00066E81 /* UI */,
 				52C2F123181A65E600466E6E /* AppDelegate.h */,
 				52C2F124181A65E600466E6E /* AppDelegate.m */,
@@ -184,6 +207,7 @@
 		52C2F137181A67A700466E6E /* ContactsListController */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1C03A181C55B000066E81 /* ContactListCell */,
 				52C2F13E181A680B00466E6E /* ContactsListController.h */,
 				52C2F13F181A680B00466E6E /* ContactsListController.m */,
 			);
@@ -201,8 +225,15 @@
 		52C2F145181A6B6800466E6E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1C040181C5B3F00066E81 /* icon1.png */,
+				D3B1C041181C5B3F00066E81 /* icon1@2x.png */,
+				D3B1C042181C5B3F00066E81 /* icon2.png */,
+				D3B1C043181C5B3F00066E81 /* icon2@2x.png */,
+				D3B1C044181C5B3F00066E81 /* icon3.png */,
+				D3B1C045181C5B3F00066E81 /* icon3@2x.png */,
+				D3B1C046181C5B3F00066E81 /* icon4.png */,
+				D3B1C047181C5B3F00066E81 /* icon4@2x.png */,
 				52C2F146181A6B9000466E6E /* navBarBackgImg.png */,
-				5298700B181A887D005C1670 /* navBarButtonBackg.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -223,6 +254,25 @@
 				D3B1C034181BFBD900066E81 /* ColoredButton.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D3B1C036181C4A9900066E81 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D3B1C037181C4AC600066E81 /* ContactInfo.h */,
+				D3B1C038181C4AC600066E81 /* ContactInfo.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D3B1C03A181C55B000066E81 /* ContactListCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B1C03B181C55C000066E81 /* ContactListCell.h */,
+				D3B1C03C181C55C000066E81 /* ContactListCell.m */,
+				D3B1C03E181C55D900066E81 /* ContactListCell.xib */,
+			);
+			path = ContactListCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +331,15 @@
 				52C2F129181A65E600466E6E /* Default@2x.png in Resources */,
 				52C2F12B181A65E600466E6E /* Default-568h@2x.png in Resources */,
 				52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */,
-				5298700C181A887D005C1670 /* navBarButtonBackg.png in Resources */,
+				D3B1C03F181C55D900066E81 /* ContactListCell.xib in Resources */,
+				D3B1C048181C5B3F00066E81 /* icon1.png in Resources */,
+				D3B1C049181C5B3F00066E81 /* icon1@2x.png in Resources */,
+				D3B1C04A181C5B3F00066E81 /* icon2.png in Resources */,
+				D3B1C04B181C5B3F00066E81 /* icon2@2x.png in Resources */,
+				D3B1C04C181C5B3F00066E81 /* icon3.png in Resources */,
+				D3B1C04D181C5B3F00066E81 /* icon3@2x.png in Resources */,
+				D3B1C04E181C5B3F00066E81 /* icon4.png in Resources */,
+				D3B1C04F181C5B3F00066E81 /* icon4@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +360,8 @@
 				52987012181A88D3005C1670 /* UIImage+Helpers.m in Sources */,
 				52987013181A88D3005C1670 /* UIView+Helpers.m in Sources */,
 				D3B1C035181BFBD900066E81 /* ColoredButton.m in Sources */,
+				D3B1C039181C4AC600066E81 /* ContactInfo.m in Sources */,
+				D3B1C03D181C55C000066E81 /* ContactListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,5 +15,7 @@
 
 - (void)configureTable;
 - (UITableViewCell *)createCellWithIndexPath:(NSIndexPath *)indexPath;
-
+- (UITableViewCell *)createCellWithNib:(NSString *)nibName
+                          forTableView:(UITableView *)table
+                            withCellId:(NSString *)cellId;
 @end
