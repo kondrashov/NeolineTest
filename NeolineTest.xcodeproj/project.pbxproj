@@ -93,8 +93,6 @@
 		52C2F106181A65E600466E6E = {
 			isa = PBXGroup;
 			children = (
-				52C2F149181A83EF00466E6E /* Global */,
-				52C2F144181A6B6800466E6E /* Resources */,
 				52C2F11A181A65E600466E6E /* NeolineTest */,
 				52C2F111181A65E600466E6E /* Frameworks */,
 				52C2F110181A65E600466E6E /* Products */,
@@ -126,6 +124,8 @@
 			children = (
 				52C2F123181A65E600466E6E /* AppDelegate.h */,
 				52C2F124181A65E600466E6E /* AppDelegate.m */,
+				52C2F149181A83EF00466E6E /* Global */,
+				52C2F144181A6B6800466E6E /* Resources */,
 				52C2F134181A665900466E6E /* ViewControllers */,
 				52C2F12C181A65E600466E6E /* NeolineTest.xcdatamodeld */,
 				52C2F11B181A65E600466E6E /* Supporting Files */,
@@ -191,8 +191,7 @@
 			children = (
 				52C2F145181A6B6800466E6E /* Images */,
 			);
-			name = Resources;
-			path = NeolineTest/Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		52C2F145181A6B6800466E6E /* Images */ = {
@@ -210,8 +209,7 @@
 				52C2F14A181A840B00466E6E /* Constants.h */,
 				5298700D181A88D3005C1670 /* Categories */,
 			);
-			name = Global;
-			path = NeolineTest/Global;
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +330,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
@@ -359,7 +357,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -377,6 +375,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NeolineTest/NeolineTest-Prefix.pch";
 				INFOPLIST_FILE = "NeolineTest/NeolineTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "220BBF24-5D38-44D9-B07E-383E7C816F4B";
@@ -392,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NeolineTest/NeolineTest-Prefix.pch";
 				INFOPLIST_FILE = "NeolineTest/NeolineTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
