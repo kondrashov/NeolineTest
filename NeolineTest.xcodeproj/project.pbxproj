@@ -27,6 +27,7 @@
 		52C2F143181A683100466E6E /* ContactDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F142181A683100466E6E /* ContactDetailController.m */; };
 		52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C2F146181A6B9000466E6E /* navBarBackgImg.png */; };
 		52C2F14C181A848200466E6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F14B181A848200466E6E /* QuartzCore.framework */; };
+		D3B1C035181BFBD900066E81 /* ColoredButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C034181BFBD900066E81 /* ColoredButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		52C2F146181A6B9000466E6E /* navBarBackgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBackgImg.png; sourceTree = "<group>"; };
 		52C2F14A181A840B00466E6E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		52C2F14B181A848200466E6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D3B1C033181BFBD900066E81 /* ColoredButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredButton.h; sourceTree = "<group>"; };
+		D3B1C034181BFBD900066E81 /* ColoredButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,7 @@
 		52C2F11A181A65E600466E6E /* NeolineTest */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1C032181BFBBD00066E81 /* UI */,
 				52C2F123181A65E600466E6E /* AppDelegate.h */,
 				52C2F124181A65E600466E6E /* AppDelegate.m */,
 				52C2F149181A83EF00466E6E /* Global */,
@@ -212,6 +216,15 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		D3B1C032181BFBBD00066E81 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3B1C033181BFBD900066E81 /* ColoredButton.h */,
+				D3B1C034181BFBD900066E81 /* ColoredButton.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +301,7 @@
 				52C2F143181A683100466E6E /* ContactDetailController.m in Sources */,
 				52987012181A88D3005C1670 /* UIImage+Helpers.m in Sources */,
 				52987013181A88D3005C1670 /* UIView+Helpers.m in Sources */,
+				D3B1C035181BFBD900066E81 /* ColoredButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

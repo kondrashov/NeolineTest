@@ -7,11 +7,10 @@
 //
 
 #import "BaseNavigationController.h"
-#import <QuartzCore/QuartzCore.h>
 
-#define BUTTON_FONT_SIZE          15
-#define BUTTON_TITLE_PADDING_X    10
-#define BUTTON_TITLE_PADDING_Y    5
+#define BAR_BUTTON_FONT_SIZE            15
+#define BAR_BUTTON_TITLE_PADDING_X      10
+#define BAR_BUTTON_TITLE_PADDING_Y      5
 
 @interface BaseNavigationController ()
 
@@ -28,6 +27,12 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configureNavBar];
+}
+
 - (void)configureNavBar
 {
     self.navigationController.navigationBar.clipsToBounds = YES;
@@ -35,14 +40,14 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     
     self.navigationItem.titleView = [self getTitleView];
-//    self.navigationItem.rightBarButtonItem = [self createBarButtonWithTitle:@"Готово" delegate:self selector:@selector(onRightBarButton:)];
-//    self.navigationItem.leftBarButtonItem = [self createBarButtonWithTitle:@"Назад" delegate:self selector:@selector(onLeftBarButton:)];
+    
+    if(self.navigationController.viewControllers.count > 1)
+        [self addBackButton];
 }
 
-- (void)viewDidLoad
+- (void)addBackButton
 {
-    [super viewDidLoad];
-    [self configureNavBar];
+    self.navigationItem.leftBarButtonItem = [self createBarButtonWithTitle:@"Назад" delegate:self selector:@selector(onLeftBarButton:)];
 }
 
 - (UIView *)getTitleView
@@ -56,21 +61,28 @@
     return [label autorelease];
 }
 
-- (UIBarButtonItem *)createBarButtonWithTitle:(NSString *)title delegate:(id)delegate selector:(SEL)selector
+- (ColoredButton *)createButtonWithTitle:(NSString *)title delegate:(id)delegate selector:(SEL)selector normalColor:(UIColor *)normColor highlightColor:(UIColor *)highlightColor fontSize:(NSInteger)fontSize paddingX:(NSInteger)paddingX paddingY:(NSInteger)paddingY
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGSize btnTitleSize = [title sizeWithFont:[UIFont systemFontOfSize:BUTTON_FONT_SIZE]];
-    UIImage *btnImage = [[UIImage imageNamed:@"navBarButtonBackg"] safeResizableImageWithCapInsets:UIEdgeInsetsMake(3, 3, 3, 3)
-                                                                                      resizingMode:UIImageResizingModeStretch];
-    [button setBackgroundImage:btnImage forState:UIControlStateNormal];
+    ColoredButton *button = [ColoredButton buttonWithType:UIButtonTypeCustom];
+    CGSize btnTitleSize = [title sizeWithFont:[UIFont systemFontOfSize:fontSize]];
+    
+    [button setNormalColor:normColor];
+    [button setBackgroundColor:button.normalColor];
+    [button setHighlightColor:highlightColor];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont systemFontOfSize:BUTTON_FONT_SIZE]];
-    [button setFrame:CGRectMake(0, 0, btnTitleSize.width + BUTTON_TITLE_PADDING_X, btnTitleSize.height + BUTTON_TITLE_PADDING_Y)];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [button setFrame:CGRectMake(0, 0, btnTitleSize.width + paddingX, btnTitleSize.height + paddingY)];
     [button addTarget:delegate action:selector forControlEvents:UIControlEventTouchUpInside];
     button.layer.borderColor = RGBCOLOR(146, 162, 172).CGColor;
     button.layer.borderWidth = 1;
     
+    return button;
+}
+
+- (UIBarButtonItem *)createBarButtonWithTitle:(NSString *)title delegate:(id)delegate selector:(SEL)selector
+{
+    ColoredButton *button = [self createButtonWithTitle:title delegate:delegate selector:selector normalColor:RGBCOLOR(206, 231, 244) highlightColor:RGBCOLOR(152, 158, 160) fontSize:BAR_BUTTON_FONT_SIZE paddingX:BAR_BUTTON_TITLE_PADDING_X paddingY:BAR_BUTTON_TITLE_PADDING_Y];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     return [barButtonItem autorelease];
 }
@@ -84,7 +96,7 @@
 
 - (void)onLeftBarButton:(id)sender
 {
-    // Override in childs    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

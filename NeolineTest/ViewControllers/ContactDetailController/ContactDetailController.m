@@ -17,8 +17,9 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        self.title = @"Новый";
     }
     return self;
 }
@@ -26,13 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self setupView];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setupView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.navigationItem.rightBarButtonItem = [self createBarButtonWithTitle:@"Готово"
+                                                                   delegate:self
+                                                                   selector:@selector(onRightBarButton:)];
 }
 
 @end

@@ -7,12 +7,17 @@
 //
 
 #import "ContactsListController.h"
+#import "ContactDetailController.h"
 
 @interface ContactsListController ()
+
+@property (retain, nonatomic) ColoredButton *btnAddContact;
 
 @end
 
 @implementation ContactsListController
+
+#pragma mark - ViewController lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,14 +31,50 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
+    [self setupView];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)dealloc
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.btnAddContact release];
+    [super dealloc];
+}
+
+#pragma mark - Methods
+
+- (void)setupView
+{
+    [self createAddButton];
+}
+
+- (void)createAddButton
+{
+    if(!self.btnAddContact)
+    {
+        self.btnAddContact = [self createButtonWithTitle:@"Добавить"
+                                                delegate:self
+                                                selector:@selector(onAdd:)
+                                             normalColor:RGBCOLOR(0, 127, 37)
+                                          highlightColor:RGBCOLOR(0, 255, 0)
+                                                fontSize:20
+                                                paddingX:20
+                                                paddingY:10];
+        
+        self.btnAddContact.layer.cornerRadius = 7;
+        self.btnAddContact.origin = CGPointMake(20, 20);
+    }
+
+    if(self.btnAddContact.superview != self.view)
+        [self.view addSubview:self.btnAddContact];
+}
+
+#pragma mark - Actions
+
+- (void)onAdd:(id)sender
+{
+    ContactDetailController *contactDetailVC = [[ContactDetailController alloc] init];
+    [self.navigationController pushViewController:contactDetailVC animated:YES];
+    [contactDetailVC release];
 }
 
 @end

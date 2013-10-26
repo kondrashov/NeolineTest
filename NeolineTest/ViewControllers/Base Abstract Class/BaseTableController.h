@@ -8,6 +8,12 @@
 
 #import "BaseNavigationController.h"
 
-@interface BaseTableController : BaseNavigationController
+@interface BaseTableController : BaseNavigationController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UITableView  *tableView;
+@property (nonatomic, retain) NSMutableArray        *dataArray;
+
+- (void)configureTable;
+- (UITableViewCell *)createCellWithIndexPath:(NSIndexPath *)indexPath;
 
 @end
