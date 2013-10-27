@@ -12,6 +12,8 @@
 #define BAR_BUTTON_TITLE_PADDING_X      10
 #define BAR_BUTTON_TITLE_PADDING_Y      5
 
+#define RectEdgeNone                    0
+
 @interface BaseNavigationController ()
 
 @end
@@ -25,6 +27,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = RGBCOLOR(206, 231, 244);
     [self configureNavBar];
+
+    // iOS 7
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        [self setEdgesForExtendedLayout:RectEdgeNone];
 }
 
 #pragma mark - Methods
@@ -110,6 +117,11 @@
 -(NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

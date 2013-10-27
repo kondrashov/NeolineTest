@@ -10,3 +10,5 @@
 #define RGBACOLOR(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 
 #define FLIP_ANIM_DURATION  0.75
+
+#define NAV_BAR_HEIGHT      [[self.navigationController navigationBar] frame].size.height
