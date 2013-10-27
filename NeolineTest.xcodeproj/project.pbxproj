@@ -26,6 +26,7 @@
 		52C2F143181A683100466E6E /* ContactDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C2F142181A683100466E6E /* ContactDetailController.m */; };
 		52C2F147181A6B9000466E6E /* navBarBackgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C2F146181A6B9000466E6E /* navBarBackgImg.png */; };
 		52C2F14C181A848200466E6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2F14B181A848200466E6E /* QuartzCore.framework */; };
+		D31A2C7D181D0BBB00B42F62 /* ImageTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31A2C7C181D0BBB00B42F62 /* ImageTabView.m */; };
 		D3B1C035181BFBD900066E81 /* ColoredButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C034181BFBD900066E81 /* ColoredButton.m */; };
 		D3B1C039181C4AC600066E81 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C038181C4AC600066E81 /* ContactInfo.m */; };
 		D3B1C03D181C55C000066E81 /* ContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B1C03C181C55C000066E81 /* ContactListCell.m */; };
@@ -73,6 +74,8 @@
 		52C2F146181A6B9000466E6E /* navBarBackgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarBackgImg.png; sourceTree = "<group>"; };
 		52C2F14A181A840B00466E6E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		52C2F14B181A848200466E6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D31A2C7B181D0BBB00B42F62 /* ImageTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTabView.h; sourceTree = "<group>"; };
+		D31A2C7C181D0BBB00B42F62 /* ImageTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTabView.m; sourceTree = "<group>"; };
 		D3B1C033181BFBD900066E81 /* ColoredButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredButton.h; sourceTree = "<group>"; };
 		D3B1C034181BFBD900066E81 /* ColoredButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredButton.m; sourceTree = "<group>"; };
 		D3B1C037181C4AC600066E81 /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfo.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 			children = (
 				D3B1C033181BFBD900066E81 /* ColoredButton.h */,
 				D3B1C034181BFBD900066E81 /* ColoredButton.m */,
+				D31A2C7B181D0BBB00B42F62 /* ImageTabView.h */,
+				D31A2C7C181D0BBB00B42F62 /* ImageTabView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				D3B1C039181C4AC600066E81 /* ContactInfo.m in Sources */,
 				D3B1C03D181C55C000066E81 /* ContactListCell.m in Sources */,
 				D3B1C054181C734F00066E81 /* BaseInputController.m in Sources */,
+				D31A2C7D181D0BBB00B42F62 /* ImageTabView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

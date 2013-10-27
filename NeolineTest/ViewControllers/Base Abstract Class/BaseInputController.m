@@ -10,7 +10,6 @@
 #import "AppDelegate.h"
 
 #define KEYBOARD_PADDING    10
-#define BOTTOM_PADDING      30
 
 @interface BaseInputController ()
 
@@ -25,7 +24,6 @@
     [super viewDidLoad];
     [self createGestures];
     [self createObservers];
-    [self configureScrollView];
 }
 
 - (void)viewDidUnload
@@ -43,12 +41,6 @@
 }
 
 #pragma mark - Methods
-
-- (void)configureScrollView
-{
-    UITextField *bottomField = textFields[textFields.count - 1];
-    scrollView.contentSize = CGSizeMake(scrollView.width, bottomField.y + bottomField.height + BOTTOM_PADDING);
-}
 
 - (void)createGestures
 {
@@ -122,14 +114,6 @@
 - (void)tapScrollView
 {
     [self.view endEditing:YES];
-}
-
-#pragma mark - Rotation
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    [self configureScrollView];
 }
 
 @end
