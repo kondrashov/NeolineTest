@@ -13,7 +13,7 @@
 - (void)configureCell:(ContactInfo *)contactInfo
 {
     self.lblId.text = [NSString stringWithFormat:@"%d.", contactInfo.contactId];
-    self.lblFullName.text = [NSString stringWithFormat:@"%@ %@ %@", contactInfo.firstName, contactInfo.lastName, contactInfo.fatherName];
+    self.lblFullName.text = [NSString stringWithFormat:@"%@ %@ %@", contactInfo.lastName, contactInfo.firstName, contactInfo.fatherName];
     [self.imgIcon setImage:contactInfo.imgIcon];
 }
 

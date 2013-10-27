@@ -11,6 +11,7 @@
 @interface ContactInfo : NSObject
 
 @property (assign, nonatomic) NSInteger contactId;
+@property (assign, nonatomic) NSInteger iconId;
 @property (retain, nonatomic) NSString  *firstName;
 @property (retain, nonatomic) NSString  *lastName;
 @property (retain, nonatomic) NSString  *fatherName;

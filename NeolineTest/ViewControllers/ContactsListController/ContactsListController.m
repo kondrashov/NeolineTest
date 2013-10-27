@@ -61,11 +61,12 @@
     {
         ContactInfo *contactInfo = [ContactInfo new];
         contactInfo.contactId = i + 1;
-        contactInfo.firstName = @"Artem";
-        contactInfo.lastName = @"Kondrashov";
-        contactInfo.fatherName = @"Valerievich";
+        contactInfo.firstName = @"Артем";
+        contactInfo.lastName = @"Кондрашов";
+        contactInfo.fatherName = @"Валерьевич";
         contactInfo.phoneNumber = @"0996572548";
         contactInfo.imgIcon = [UIImage imageNamed:[NSString stringWithFormat:@"icon%d", iconCount]];
+        contactInfo.iconId = iconCount;
         
         if(iconCount < 4)
             iconCount++;

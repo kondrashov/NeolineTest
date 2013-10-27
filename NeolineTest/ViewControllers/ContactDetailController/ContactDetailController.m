@@ -12,10 +12,19 @@
 #define IMAGES_COUNT        4
 #define BOTTOM_PADDING      30
 
+#define FIRST_NAME      0
+#define LAST_NAME       1
+#define FATHER_NAME     2
+#define PHONE_NUMBER    3
+
+#define DEFAULT_ICON    0
+
+
 @interface ContactDetailController () <ImageTabViewDelegate>
 
 @property (retain, nonatomic) ContactInfo *contactInfo;
 @property (retain, nonatomic) ImageTabView *imageTabView;
+@property (retain, nonatomic) IBOutlet UILabel *lblIcon;
 
 @end
 
@@ -53,10 +62,12 @@
 {
     [super viewDidLoad];
     [self setupView];
+    [self loadData];
 }
 
 - (void)viewDidUnload
 {
+    [self setLblIcon:nil];
     [super viewDidUnload];
     [self setImageTabView:nil];
 }
@@ -65,6 +76,7 @@
 {
     [_contactInfo release];
     [_imageTabView release];
+    [_lblIcon release];
     [super dealloc];
 }
 
@@ -86,42 +98,71 @@
     [scrollView addSubview:self.imageTabView];
 }
 
+- (void)loadData
+{
+    if(self.contactInfo)
+    {
+        [textFields[FIRST_NAME] setText:self.contactInfo.firstName];
+        [textFields[LAST_NAME] setText:self.contactInfo.lastName];
+        [textFields[FATHER_NAME] setText:self.contactInfo.fatherName];
+        [textFields[PHONE_NUMBER] setText:self.contactInfo.phoneNumber];
+        [self.imageTabView setActiveImage:self.contactInfo.iconId - 1];
+    }
+    else
+        [self.imageTabView setActiveImage:DEFAULT_ICON];
+}
+
 - (void)updateView
 {
-    UITextField *lastTextField = textFields[textFields.count - 1];
-    
-    self.imageTabView.origin = CGPointMake(scrollView.width / 2 - self.imageTabView.width / 2, lastTextField.y + lastTextField.height + 40);
+    self.imageTabView.origin = CGPointMake(scrollView.width / 2 - self.imageTabView.width / 2, self.lblIcon.y + 30);
     
     scrollView.contentSize = CGSizeMake(scrollView.width, self.imageTabView.y + self.imageTabView.height + BOTTOM_PADDING);
+}
+
+- (void)dismissView
+{
+    if(self.detailMode == DetailMode_Add)
+        [self.navigationController popViewControllerAnimated:YES];
+    else
+    {
+        [UIView animateWithDuration:FLIP_ANIM_DURATION animations:^
+         {
+             [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+             [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
+         }];
+        [self.navigationController popViewControllerAnimated:NO];
+    }
 }
 
 #pragma mark - ImageTabView delegate
 
 - (void)chooseImage:(NSInteger)imageIndex
 {
-    NSLog(@"%d", imageIndex);
+//    NSLog(@"%d", imageIndex);
+}
+
+#pragma mark - TextField delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if(textField.tag < 4)
+        [textFields[textField.tag] becomeFirstResponder];
+    else
+        [textField resignFirstResponder];
+    
+    return YES;
 }
 
 #pragma mark - Actions
 
 - (void)onLeftBarButton:(id)sender
 {
-    if(self.detailMode == DetailMode_Add)
-       [self.navigationController popViewControllerAnimated:YES];
-    else
-    {
-        [UIView animateWithDuration:FLIP_ANIM_DURATION animations:^
-        {
-            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-            [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
-         }];
-        [self.navigationController popViewControllerAnimated:NO];
-    }
+    [self dismissView];
 }
 
 - (void)onRightBarButton:(id)sender
 {
-
+    [self dismissView];
 }
 
 #pragma mark - Rotation

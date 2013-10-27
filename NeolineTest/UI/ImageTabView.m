@@ -39,10 +39,28 @@
 - (void)dealloc
 {
     [_imageViewsArray release];
+    _delegate = nil;
     [super dealloc];
 }
 
 #pragma mark - Methods
+
+- (void)setActiveImage:(NSInteger)index
+{
+    UIImageView *activeImageView = self.imageViewsArray[index];
+    
+    for(UIImageView *imgView in self.imageViewsArray)
+    {
+        if(imgView != activeImageView)
+            imgView.layer.borderWidth = 0;
+        else
+        {
+            curentIndex = activeImageView.tag;
+            imgView.layer.borderColor = [UIColor redColor].CGColor;
+            imgView.layer.borderWidth = 2;
+        }
+    }
+}
 
 - (void)updateUI:(NSArray *)imagesArray
 {
@@ -81,22 +99,9 @@
 
 - (void)tap:(UIGestureRecognizer *)gesture
 {
-    UIImageView *tapImageView = (UIImageView *)gesture.view;
-    
-    for(UIImageView *imgView in self.imageViewsArray)
-    {
-        if(imgView != tapImageView)
-            imgView.layer.borderWidth = 0;
-        else
-        {
-            curentIndex = tapImageView.tag;
-            imgView.layer.borderColor = [UIColor redColor].CGColor;
-            imgView.layer.borderWidth = 2;
-        }
-    }
-    
+    [self setActiveImage:gesture.view.tag];
     if([self.delegate respondsToSelector:@selector(chooseImage:)])
-        [self.delegate chooseImage:tapImageView.tag];
+        [self.delegate chooseImage:gesture.view.tag];
 }
 
 @end
