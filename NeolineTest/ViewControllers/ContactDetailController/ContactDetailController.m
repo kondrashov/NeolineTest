@@ -45,6 +45,11 @@
     [self setupView];
 }
 
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
 - (void)dealloc
 {
     [_contactInfo release];
@@ -60,6 +65,8 @@
                                                                    selector:@selector(onRightBarButton:)];
 }
 
+#pragma mark - Actions
+
 - (void)onLeftBarButton:(id)sender
 {
     if(self.detailMode == DetailMode_Add)
@@ -73,6 +80,11 @@
          }];
         [self.navigationController popViewControllerAnimated:NO];
     }
+}
+
+- (void)onRightBarButton:(id)sender
+{
+
 }
 
 @end

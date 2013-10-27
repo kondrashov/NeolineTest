@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
+#import "BaseInputController.h"
 #import "ContactInfo.h"
 
 typedef enum
@@ -15,7 +16,7 @@ typedef enum
     DetailMode_Edit
 }DetailMode;
 
-@interface ContactDetailController : BaseNavigationController
+@interface ContactDetailController : BaseInputController
 
 @property (assign, nonatomic) DetailMode detailMode;
 
