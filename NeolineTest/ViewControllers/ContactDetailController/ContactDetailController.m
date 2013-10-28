@@ -8,21 +8,22 @@
 
 #import "ContactDetailController.h"
 #import "ImageTabView.h"
+#import "ContactEntity.h"
 
 #define IMAGES_COUNT        4
 #define BOTTOM_PADDING      30
 
-#define FIRST_NAME      0
-#define LAST_NAME       1
-#define FATHER_NAME     2
-#define PHONE_NUMBER    3
+#define FIRST_NAME          0
+#define LAST_NAME           1
+#define FATHER_NAME         2
+#define PHONE_NUMBER        3
 
-#define DEFAULT_ICON    0
+#define DEFAULT_ICON        0
 
 
 @interface ContactDetailController () <ImageTabViewDelegate>
 
-@property (retain, nonatomic) ContactInfo *contactInfo;
+@property (retain, nonatomic) ContactEntity *contactInfo;
 @property (retain, nonatomic) ImageTabView *imageTabView;
 @property (retain, nonatomic) IBOutlet UILabel *lblIcon;
 
@@ -32,7 +33,7 @@
 
 #pragma mark - Lifecycle
 
-- (id)initWithContactInfo:(ContactInfo *)contactInfo
+- (id)initWithContactInfo:(ContactEntity *)contactInfo
 {
     self = [super initWithNibName:nil bundle:nil];
     if(self)
@@ -77,10 +78,27 @@
     [_contactInfo release];
     [_imageTabView release];
     [_lblIcon release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 
 #pragma mark - Methods
+
+- (void)createObservers
+{
+    [super createObservers];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveData)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:app];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveData)
+                                                 name:UIApplicationWillTerminateNotification
+                                               object:app];
+}
 
 - (void)setupView
 {
@@ -105,8 +123,8 @@
         [textFields[FIRST_NAME] setText:self.contactInfo.firstName];
         [textFields[LAST_NAME] setText:self.contactInfo.lastName];
         [textFields[FATHER_NAME] setText:self.contactInfo.fatherName];
-        [textFields[PHONE_NUMBER] setText:self.contactInfo.phoneNumber];
-        [self.imageTabView setActiveImage:self.contactInfo.iconId - 1];
+        [textFields[PHONE_NUMBER] setText:self.contactInfo.phone];
+        [self.imageTabView setActiveImage:self.contactInfo.iconId.integerValue];
     }
     else
         [self.imageTabView setActiveImage:DEFAULT_ICON];
@@ -134,11 +152,61 @@
     }
 }
 
+- (void)saveData
+{
+    NSString *firstName = [textFields[FIRST_NAME] text];
+    NSString *lastName = [textFields[LAST_NAME] text];
+    NSString *fatherName = [textFields[FATHER_NAME] text];
+    NSString *phone = [textFields[PHONE_NUMBER] text];
+    NSData *dataImage = UIImagePNGRepresentation([self.imageTabView getActiveImage]);
+    NSNumber *iconId = [NSNumber numberWithInt:[self.imageTabView getActiveIndex]];
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:CONTACT_ENTITY inManagedObjectContext:context];
+    [request setEntity:entityDescription];
+    NSError *error;
+    
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    if(!objects)
+        NSLog(@"%@", error);
+    
+    NSInteger contactId;
+    NSManagedObject *contact;
+
+    if(self.detailMode == DetailMode_Add)
+    {
+        contact = [NSEntityDescription insertNewObjectForEntityForName:CONTACT_ENTITY inManagedObjectContext:context];
+        
+        if(objects.count)
+            contactId = objects.count + 1;
+        else
+            contactId = 1;
+    }
+    else
+    {
+        contact = self.contactInfo;
+        contactId = self.contactInfo.contactId.integerValue;
+    }
+    
+    [contact setValue:[NSNumber numberWithInt:contactId] forKey:@"contactId"];
+    [contact setValue:firstName forKey:@"firstName"];
+    [contact setValue:lastName forKey:@"lastName"];
+    [contact setValue:fatherName forKey:@"fatherName"];
+    [contact setValue:phone forKey:@"phone"];
+    [contact setValue:dataImage forKey:@"icon"];
+    [contact setValue:iconId forKey:@"iconId"];
+    
+    [context save:&error];
+}
+
 #pragma mark - ImageTabView delegate
 
 - (void)chooseImage:(NSInteger)imageIndex
 {
-//    NSLog(@"%d", imageIndex);
+
 }
 
 #pragma mark - TextField delegate
@@ -162,6 +230,8 @@
 
 - (void)onRightBarButton:(id)sender
 {
+    [self saveData];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ReloadDataNotification object:nil];
     [self dismissView];
 }
 

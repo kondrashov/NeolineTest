@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>47A9F632-4C54-4C30-9E00-CFA090581BFD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NeolineTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA801B2A-9806-4F22-9B7B-345C097A8306</key>
+		<string>https://github.com/kondrashov/NeolineTest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NeolineTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA801B2A-9806-4F22-9B7B-345C097A8306</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kondrashov/NeolineTest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA801B2A-9806-4F22-9B7B-345C097A8306</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA801B2A-9806-4F22-9B7B-345C097A8306</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NeolineTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -19,6 +19,8 @@
 - (id)initWithImagesArray:(NSArray *)imagesArray activeTabIndex:(NSInteger)activeTabIndex;
 - (void)updateUI:(NSArray *)imagesArray;
 - (void)setActiveImage:(NSInteger)index;
+- (UIImage *)getActiveImage;
+- (NSInteger)getActiveIndex;
 
 @property (assign, nonatomic) id<ImageTabViewDelegate> delegate;
 

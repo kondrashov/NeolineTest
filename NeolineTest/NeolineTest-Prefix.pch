@@ -15,4 +15,5 @@
     #import "Constants.h"
     #import "UIView+Helpers.h"
     #import "UIImage+Helpers.h"
+    #import "AppDelegate.h"
 #endif

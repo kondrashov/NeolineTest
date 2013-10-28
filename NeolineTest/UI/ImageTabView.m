@@ -62,6 +62,16 @@
     }
 }
 
+- (UIImage *)getActiveImage
+{
+    return [self.imageViewsArray[curentIndex] image];
+}
+
+- (NSInteger)getActiveIndex
+{
+    return curentIndex;
+}
+
 - (void)updateUI:(NSArray *)imagesArray
 {
     for(UIView *view in self.subviews)

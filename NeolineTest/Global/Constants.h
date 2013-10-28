@@ -12,3 +12,6 @@
 #define FLIP_ANIM_DURATION  0.75
 
 #define NAV_BAR_HEIGHT      [[self.navigationController navigationBar] frame].size.height
+
+#define CONTACT_ENTITY          @"ContactEntity"
+#define ReloadDataNotification   @"ReoadDataNotification"

@@ -21,7 +21,7 @@
     [super viewDidLoad];
     if(!self.tableView)
     {
-        self.tableView = [[UITableView new] autorelease];
+        self.tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] autorelease];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }

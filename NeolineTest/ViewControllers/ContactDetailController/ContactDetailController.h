@@ -8,7 +8,7 @@
 
 #import "BaseNavigationController.h"
 #import "BaseInputController.h"
-#import "ContactInfo.h"
+#import "ContactEntity.h"
 
 typedef enum
 {
@@ -20,6 +20,6 @@ typedef enum
 
 @property (assign, nonatomic) DetailMode detailMode;
 
-- (id)initWithContactInfo:(ContactInfo *)contactInfo;
+- (id)initWithContactInfo:(ContactEntity *)contactInfo;
 
 @end

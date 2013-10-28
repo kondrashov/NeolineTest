@@ -28,10 +28,8 @@
     self.view.backgroundColor = RGBCOLOR(206, 231, 244);
     [self configureNavBar];
 
-    // iOS 7
-    
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        [self setEdgesForExtendedLayout:RectEdgeNone];
+        [self setEdgesForExtendedLayout:RectEdgeNone];  // iOS 7
 }
 
 #pragma mark - Methods

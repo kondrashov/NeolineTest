@@ -10,11 +10,11 @@
 
 @implementation ContactListCell
 
-- (void)configureCell:(ContactInfo *)contactInfo
+- (void)configureCell:(ContactEntity *)contactInfo
 {
-    self.lblId.text = [NSString stringWithFormat:@"%d.", contactInfo.contactId];
+    self.lblId.text = [NSString stringWithFormat:@"%d.", contactInfo.contactId.integerValue];
     self.lblFullName.text = [NSString stringWithFormat:@"%@ %@ %@", contactInfo.lastName, contactInfo.firstName, contactInfo.fatherName];
-    [self.imgIcon setImage:contactInfo.imgIcon];
+    [self.imgIcon setImage:[UIImage imageWithData:contactInfo.icon]];
 }
 
 - (void)dealloc

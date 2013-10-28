@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContactInfo.h"
+#import "ContactEntity.h"
 
 @interface ContactListCell : UITableViewCell
 @property (retain, nonatomic) IBOutlet UILabel *lblId;
 @property (retain, nonatomic) IBOutlet UIImageView *imgIcon;
 @property (retain, nonatomic) IBOutlet UILabel *lblFullName;
 
-- (void)configureCell:(ContactInfo *)contactInfo;
+- (void)configureCell:(ContactEntity *)contactInfo;
 
 @end
