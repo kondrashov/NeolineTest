@@ -60,7 +60,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return [UIView new];
+    return [[UIView new] autorelease];
 }
 
 - (UITableViewCell *)createCellWithNib:(NSString *)nibName

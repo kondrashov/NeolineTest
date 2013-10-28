@@ -230,9 +230,18 @@
 
 - (void)onRightBarButton:(id)sender
 {
-    [self saveData];
-    [[NSNotificationCenter defaultCenter] postNotificationName:ReloadDataNotification object:nil];
-    [self dismissView];
+    if([[textFields[FIRST_NAME] text] length] && [[textFields[LAST_NAME] text] length] && [[textFields[FATHER_NAME] text] length])
+    {
+        [self saveData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ReloadDataNotification object:nil];
+        [self dismissView];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Пожалуйста, заполните поля: Имя, Фамилия, Отчество" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 }
 
 #pragma mark - Rotation

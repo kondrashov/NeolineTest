@@ -66,69 +66,36 @@
 - (void)loadData
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:CONTACT_ENTITY inManagedObjectContext:context];
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
     [request setEntity:entityDescription];
     
-    NSError *error;
+    NSSortDescriptor *descriptorLastName = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSSortDescriptor *descriptorFirstName = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    NSSortDescriptor *descriptorFatherName = [[NSSortDescriptor alloc] initWithKey:@"fatherName" ascending:YES];
+
+    [request setSortDescriptors:[NSArray arrayWithObjects:descriptorLastName, descriptorFirstName, descriptorFatherName, nil]];
+
+    [descriptorLastName release];
+    [descriptorFirstName release];
+    [descriptorFatherName release];
+
     NSArray *objects = [context executeFetchRequest:request error:&error];
+    [self reindexContacts:objects context:context];
     
     if(!objects)
         NSLog(@"%@", error);
 
     self.dataArray = [NSMutableArray arrayWithArray:objects];
-    [self sortArray:self.dataArray];
-    [self reindexArray:self.dataArray];
     [self.tableView reloadData];
 }
 
-- (void)sortArray:(NSMutableArray *)array
-{
-    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2)
-     {
-         if([obj1 isKindOfClass:[ContactEntity class]] && [obj2 isKindOfClass:[ContactEntity class]])
-         {
-             ContactEntity *contact1 = obj1;
-             ContactEntity *contact2 = obj2;
-             
-             NSString *fioContact1 = [NSString stringWithFormat:@"%@ %@ %@", contact1.lastName, contact1.firstName, contact1.fatherName];
-             NSString *fioContact2 = [NSString stringWithFormat:@"%@ %@ %@", contact2.lastName, contact2.firstName, contact2.fatherName];
-             
-             if(!contact1.lastName.length && !contact1.firstName.length && !contact1.fatherName.length)
-                return NSOrderedDescending;
-
-             if(!contact2.lastName.length && !contact2.firstName.length && !contact2.fatherName.length)
-                return NSOrderedAscending;
-
-             return [fioContact1 compare:fioContact2];
-         }
-         return (NSComparisonResult)NSOrderedSame;
-     }];
-}
-
-- (void)reindexArray:(NSMutableArray *)array
+- (void)reindexContacts:(NSArray *)objects context:(NSManagedObjectContext *)context
 {
     NSInteger contactId = 1;
-    for(ContactEntity *contact in array)
-    {
-        contact.contactId = @(contactId);
-        contactId++;
-    }
-}
-
-- (void)reindexContacts
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:CONTACT_ENTITY inManagedObjectContext:context];
-    [request setEntity:entityDescription];
     NSError *error;
-    
-    NSArray *objects = [context executeFetchRequest:request error:&error];
-    
-    NSInteger contactId = 1;
     for(NSManagedObject *contact in objects)
     {
         [contact setValue:[NSNumber numberWithInt:contactId] forKey:@"contactId"];
