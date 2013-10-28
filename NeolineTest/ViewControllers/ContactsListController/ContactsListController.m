@@ -183,7 +183,6 @@
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
         [context deleteObject:removeContact];
         [context save:nil];
-//        [self reindexContacts];
         [self loadData];
         [removeContact release];
     }
